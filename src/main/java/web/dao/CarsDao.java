@@ -8,6 +8,6 @@ import java.util.List;
 
 
 public interface CarsDao {
-    List<Car> getCars();
-    List<Car> getCars(int limit);
+    List<Car> getAllCars();
+    List<Car> getCarsLimit(int limit);
 }

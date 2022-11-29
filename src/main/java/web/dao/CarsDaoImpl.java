@@ -20,11 +20,11 @@ public class CarsDaoImpl implements CarsDao {
         cars.add(new Car("3JKTR7689UT000897", "Kia", "Yellow"));
     }
 
-    public List<Car> getCars() {
+    public List<Car> getAllCars() {
         return cars;
     }
 
-    public List<Car> getCars(int limit) {
+    public List<Car> getCarsLimit(int limit) {
         if (limit < 5) {
             return cars.stream().limit(limit).collect(Collectors.toList());
         }

@@ -20,15 +20,15 @@ public class CarsController {
     }
 
     @GetMapping
-    public String showCAllCars(Model model) {
-        model.addAttribute("cars", carsDao.getCars());
+    public String showAllCars(Model model) {
+        model.addAttribute("cars", carsDao.getAllCars());
 
         return "cars";
     }
 
     @GetMapping("/{limit}")
     public String showCarsLimit(@PathVariable("limit") int limit, Model model) {
-        model.addAttribute("cars", carsDao.getCars(limit));
+        model.addAttribute("cars", carsDao.getCarsLimit(limit));
 
         return "cars";
     }
