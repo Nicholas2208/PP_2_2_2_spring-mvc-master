@@ -5,6 +5,7 @@ import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CarsDaoImpl implements CarsDao {
@@ -25,11 +26,7 @@ public class CarsDaoImpl implements CarsDao {
 
     public List<Car> getCars(int limit) {
         if (limit < 5) {
-            List<Car> temp = new ArrayList<>();
-            for (int i = 0; i < limit; i++) {
-                temp.add(cars.get(i));
-            }
-            return temp;
+            return cars.stream().limit(limit).collect(Collectors.toList());
         }
         return cars;
     }
